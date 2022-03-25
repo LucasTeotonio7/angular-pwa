@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-pwa:build:production",
+            "firebaseProject": "angular-pwa-b5588",
+            "firebaseHostingSite": "angular-pwa-b5588"
+          }
         }
       }
     }

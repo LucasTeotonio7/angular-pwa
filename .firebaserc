@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-pwa-b5588": {
+      "hosting": {
+        "angular-pwa": [
+          "angular-pwa-b5588"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-pwa-b5588"
+  }
+}
