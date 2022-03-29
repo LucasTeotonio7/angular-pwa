@@ -1,4 +1,9 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+
+import { CarBrandService } from './../../services/car-brand.service';
+import { CarBrand } from './../../models/car-brand.model';
+import { Insurance } from 'src/app/models/insurance.model';
 
 @Component({
   selector: 'app-insurance-form',
@@ -7,9 +12,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsuranceFormComponent implements OnInit {
 
-  constructor() { }
+  public insurance = new Insurance()
+  public carBrands$!: Observable<CarBrand[]>
+
+  constructor(
+    private carBrandService: CarBrandService
+  ) { }
 
   ngOnInit(): void {
+    this.carBrands$ = this.carBrandService.getBrands();
+  }
+
+  create(){
+
+  }
+
+  sendNotification(){
+
   }
 
 }

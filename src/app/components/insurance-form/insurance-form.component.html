@@ -1,1 +1,75 @@
-<p>insurance-form works!</p>
+<div class="ui card main-form">
+  <div class="content">
+    <h1 class="header">Cadastrar Seguro</h1>
+  </div>
+  <div class="content">
+    <div class="ui large form equal width stackable grid">
+
+      <!-- DADOS DO CARRO -->
+      <h3 class="title">Dados do Carro</h3>
+
+      <div class="three column row">
+
+        <div class="column field">
+          <label for="carroModel">Marca</label>
+          <select class="ui fluid search selection dropdown" [(ngModel)]="insurance.carBrand">
+            <option *ngFor="let m of carBrands$ | async" class="item" [value]="m.name">{{ m.name }}</option>
+          </select>
+        </div>
+
+        <div class="column field">
+          <label for="modeloCarro">Modelo</label>
+          <input type="text" id="modeloCarro" name="modeloCarro"
+            placeholder="Modelo" [(ngModel)]="insurance.carModel"/>
+        </div>
+
+        <div class="column field">
+          <label for="placaCarro">Placa</label>
+          <input type="text" id="placaCarro" name="placaCarro"
+            placeholder="Placa" [(ngModel)]="insurance.licensePlate"/>
+        </div>
+
+      </div>
+
+      <!-- DADOS DO PROPRIETÁRIO-->
+      <h3 class="title">Dados do Proprietário</h3>
+      <div class="three column row">
+        <div class="column field">
+          <label for="nomeProprietario">Nome</label>
+          <input type="text" id="nomeProprietario" name="nomeProprietario"
+            placeholder="Nome" [(ngModel)]="insurance.ownerFirstName"
+          />
+        </div>
+
+        <div class="column field">
+          <label for="sobrenomeProprietario">Sobrenome</label>
+          <input type="text"
+            id="sobrenomeProprietario"
+            name="sobrenomeProprietario"
+            placeholder="Sobrenome"
+            [(ngModel)]="insurance.ownerLastName"
+          />
+        </div>
+
+        <div class="column field">
+          <label for="dataNascimentoProprietario">Data de Nascimento</label>
+          <input type="date"
+            id="dataNascimentoProprietario"
+            name="dataNascimentoProprietario"
+            placeholder="Data de Nascimento"
+            [(ngModel)]="insurance.ownerDateBirth"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="extra content">
+    <div class="row">
+      <button class="ui positive right floated button" (click)="create()">Salvar</button>
+    </div>
+    <div class="row notification-button-section">
+      <button class="ui button" (click)="sendNotification()">Enviar notificação</button>
+    </div>
+  </div>
+</div>
