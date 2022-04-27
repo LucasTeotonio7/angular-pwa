@@ -10,15 +10,15 @@ app.use(bodyParse.json())
 
 // TODO: CORS
 const corsOptions = {
-  origin: True,
-  credentials: True,
+  origin: true,
+  credentials: true,
   optionSuccessStatus: 200,
 
 };
 app.use(cors(corsOptions));
 
-app.route('api/insurance').post(insuranceSave);
-app.route('api/insurance').get(insuranceList);
+app.route('/api/insurance').post(insuranceSave);
+app.route('/api/insurance').get(insuranceList);
 
 
 const HOST = 'localhost';

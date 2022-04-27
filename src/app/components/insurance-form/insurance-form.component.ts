@@ -1,3 +1,4 @@
+import { InsuranceService } from './../../services/insurance.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
@@ -16,7 +17,8 @@ export class InsuranceFormComponent implements OnInit {
   public carBrands$!: Observable<CarBrand[]>
 
   constructor(
-    private carBrandService: CarBrandService
+    private carBrandService: CarBrandService,
+    private insuranceService: InsuranceService
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class InsuranceFormComponent implements OnInit {
   }
 
   create(){
-
+    this.insuranceService.create(this.insurance);
   }
 
   sendNotification(){
