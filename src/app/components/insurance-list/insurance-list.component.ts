@@ -1,4 +1,7 @@
+import { Observable } from 'rxjs';
+import { InsuranceService } from './../../services/insurance.service';
 import { Component, OnInit } from '@angular/core';
+import { Insurance } from 'src/app/models/insurance.model';
 
 @Component({
   selector: 'app-insurance-list',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsuranceListComponent implements OnInit {
 
-  constructor() { }
+  public insurances$!: Observable<Insurance[]>;
+
+  constructor(
+    private insuranceService: InsuranceService
+  ) { }
 
   ngOnInit(): void {
+    this.insurances$ = this.insuranceService.list()
   }
 
 }

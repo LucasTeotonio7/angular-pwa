@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Insurance } from './../models/insurance.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -16,6 +17,10 @@ export class InsuranceService {
       () => alert('Seguro Cadastrado com Sucesso!'),
       (error) => console.log('erro ao cadasterar seguro')
     );
+  }
+
+  list(): Observable<Insurance[]>{
+    return this.http.get<Insurance[]>(this.API_INSURANCE + '/api/insurance');
   }
 
 }
