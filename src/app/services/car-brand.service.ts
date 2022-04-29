@@ -15,7 +15,8 @@ interface CarResponse{
 })
 export class CarBrandService {
 
-  private CARS_API_URL = 'https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getMakes'
+  private _CARS_API_URL = 'https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getMakes'
+  private CARS_API_URL = 'https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getMakes&year=2000&sold_in_us=1'
 
   constructor(
     private http: HttpClient

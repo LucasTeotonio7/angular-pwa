@@ -26,6 +26,7 @@ export class InsuranceFormComponent implements OnInit {
   }
 
   create(){
+    this.insurance.id = this.insurance.licensePlate;
     this.insuranceService.create(this.insurance);
   }
 
